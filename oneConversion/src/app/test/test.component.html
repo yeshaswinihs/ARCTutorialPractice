@@ -1,0 +1,43 @@
+<!-- Structural directives -->
+<!-- <div *ngIf="showValue">Welcome to one conversion</div> -->
+<ng-template #elseBlock>
+    <div>Welcome to ARC tutorials 1</div>
+</ng-template>
+
+<ng-template #thenBlock>
+    <div>Welcome to ARC tutorals 2</div>
+</ng-template>
+
+<div *ngIf="showValue ;then thenBlock; else elseBlock"></div>
+
+<!-- switch case -->
+<div [ngSwitch]="switchValue">
+    <div *ngSwitchCase="1"> 1 displayed</div>
+    <div *ngSwitchCase="2">2 displayed</div>
+    <div *ngSwitchDefault>default value</div>
+
+</div>
+<!-- ngFor structural directive -->
+<p>Display users</p>
+<div *ngFor="let user of users;index as i;first as f;last as l;even as e;odd as o">
+    <div>{{i+" "}}{{f +" "}}{{e +" "}}{{o+" "}}{{user.name}} {{user.email}}</div>
+</div>
+
+<div [ngStyle]="{'color':'red'}">Example1</div>
+<!-- dynamically set value -->
+<div [ngStyle]="{'color':colorval}">Example2-dynamically set value</div>
+<div [ngStyle]="{'color':colorval,'background-color':bgcolor}">Example 3</div>
+
+<div [ngClass]="'one'">Using ngClass with string example</div>
+<div [ngClass]="{'one':true,'two':false}">with multiple class names- with conditions, expression evaluations</div>
+<div [ngClass]="clsName">using dynamic class names</div>
+<div [ngClass]="[clsName1, clsName2]">Apply multiple class names using array of classes </div>
+
+<!-- Data Binding- can be integers, strings, objects, arrays and much more -->
+<div>{{subTitle}}</div>
+<div>{{epNum}}</div>
+<div>{{users}}</div>
+
+<!-- Property Binding -->
+<p [innerHTML]="subTitle">s</p>
+<input [placeholder]="placeholderval">
