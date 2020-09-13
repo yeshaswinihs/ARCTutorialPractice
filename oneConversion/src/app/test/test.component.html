@@ -39,5 +39,47 @@
 <div>{{users}}</div>
 
 <!-- Property Binding -->
+<!-- Existing property of an HTML element, so can bind it,  -->
 <p [innerHTML]="subTitle">s</p>
 <input [placeholder]="placeholderval">
+
+<!-- Attribute binding -Attribute means i can have custom property and then i can bind it.  -->
+<!-- attr.updateLink property does not exist on anchor tag by default. This is  acustom attribute property 
+that we are defining. -->
+<a [href]="hrefVal" [attr.updateLink]="updatedLink" [attr.data-link]="updatedLink">Link</a>
+
+<!-- event binding -->
+<button (click)="onClick(7)">Show Alert</button>
+<!-- two way binding -->
+<input type="text" [(ngModel)]="inputValue">
+<p>{{inputValue}}</p>
+
+<!-- pipes -->
+<!-- Pipes are used to transform the data. Pipes will take data input and convert/transform into a desired format.
+We can apply pipes to any view/template and to any data inputs. -->
+<!-- Built in pipes- lowercase, Uppercase, Currency, Date.
+Parametrized PIpes- we can pass one or more parameters to pipes
+CHaining pipes- we can connect multiple pipes to data input. 
+Custom pipes- we can create our own custom pipes for various data formatting. -->
+<div>
+    <p>{{ user |json}}</p>
+    <p>{{user.dob | date:'short'| lowercase}}</p>
+    <p>{{user.dob | date:'longDate'}}</p>
+    <p>{{user.salary | currency:'USD':'code' :'3.0-0'}}</p>
+</div>
+
+<!-- Custom PIpes- -->
+<!-- We can create custom pipes in our application. ng generate pipe highlight
+import Pipe and PipeTransform from the @angular/core 
+Pipes are declared with the decorator @pipe and provide the selector name -->
+<!-- <div>{{userDemo.city | highlight:userDemo.city}}</div> -->
+<ul>
+    <li *ngFor="let userDemo of userDemos">
+        <div [innerHTML]="userDemo.city | highlight:userDemo.cityCode"></div>
+    </li>
+</ul>
+<!-- hands on examples of custom pipes -->
+<!-- 1.formatting a phone number
+2. Highlighting the result keyword
+3. hIghlighting tax return or percentage. -->
+
