@@ -7,11 +7,27 @@ import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
 import { HighlightPipe } from './highlight.pipe';
 
+import { OrderViewComponent } from './order-view/order-view.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ProductIdComponent } from './product-id/product-id.component';
+import { ProductViewComponent } from './product-view/product-view.component';
+import { ProductsComponent } from './products/products.component';
+import { SearchComponent } from './search/search.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    HighlightPipe
+    HighlightPipe,
+    OrderViewComponent,
+    PageNotFoundComponent,
+    ProductEditComponent,
+    ProductIdComponent,
+    ProductViewComponent,
+    ProductsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
