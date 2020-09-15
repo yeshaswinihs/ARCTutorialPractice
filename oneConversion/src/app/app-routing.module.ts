@@ -6,9 +6,12 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductIdComponent } from './product-id/product-id.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { SearchComponent } from './search/search.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminGuardGuard } from './admin-guard.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: 'admin', component: AdminHomeComponent, canActivate: [AdminGuardGuard] },
   {
     path: 'products',
     children: [

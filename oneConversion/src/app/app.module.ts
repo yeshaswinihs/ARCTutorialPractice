@@ -14,6 +14,7 @@ import { ProductIdComponent } from './product-id/product-id.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ProductsComponent } from './products/products.component';
 import { SearchComponent } from './search/search.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { SearchComponent } from './search/search.component';
     ProductIdComponent,
     ProductViewComponent,
     ProductsComponent,
-    SearchComponent
+    SearchComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,
