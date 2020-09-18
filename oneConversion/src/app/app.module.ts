@@ -16,6 +16,8 @@ import { ProductsComponent } from './products/products.component';
 import { SearchComponent } from './search/search.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { TdfComponent } from './tdf/tdf.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -31,12 +33,14 @@ import { TdfComponent } from './tdf/tdf.component';
     ProductsComponent,
     SearchComponent,
     AdminHomeComponent,
-    TdfComponent
+    TdfComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
