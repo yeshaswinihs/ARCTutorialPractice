@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Login Form</h2>
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" required email id="exampleInputEmail1" name="emailAddr" ngModel
+        aria-describedby="emailHelp" placeholder="Enter email" #emailAddr="ngModel">
+      <div *ngIf="emailAddr.errors && (emailAddr.touched && emailAddr.invalid)">
+        <small id="emailHelp" class="form-text text-danger" *ngIf="emailAddr.errors.required">Enter email
+          address.</small>
+        <small id="emailHelp" class="form-text text-danger" *ngIf="emailAddr.errors.email">Enter valid email
+          address.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" required class="form-control" id="exampleInputPassword1" name="password" ngModel
+        #password="ngModel" placeholder="Password">
+      <small class="text-danger" *ngIf="password.touched && password.invalid">Enter password</small>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" required name="terms" #terms="ngModel" ngModel id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Agree to terms</label>
+      <small class="text-danger" *ngIf="loginForm.touched && terms.invalid">Please agree to terms</small>
+    </div>
+    <div class="form-check">
+      <input ngModel class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="male" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        Male
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="female" ngModel>
+      <label class="form-check-label" for="exampleRadios2">
+        Female
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Notes</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ngModel></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+  </form>
+</div>

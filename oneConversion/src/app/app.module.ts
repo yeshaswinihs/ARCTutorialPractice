@@ -15,6 +15,7 @@ import { ProductViewComponent } from './product-view/product-view.component';
 import { ProductsComponent } from './products/products.component';
 import { SearchComponent } from './search/search.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { TdfComponent } from './tdf/tdf.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     ProductViewComponent,
     ProductsComponent,
     SearchComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    TdfComponent
   ],
   imports: [
     BrowserModule,
